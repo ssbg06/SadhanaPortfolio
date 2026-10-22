@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sadhana Gowda's student portfolio, projects and academic interests.">
+
+  <title>Sadhana Gowda | Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: #303b46;
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #315f91;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #17365d;
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(950px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Navigation bar */
+
+    header {
+      background: #17365d;
+      border-bottom: 4px solid #315f91;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.08rem;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    header nav a {
+      color: #edf4ff;
+      font-size: 0.92rem;
+      padding: 7px 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    header nav a:hover {
+      color: #ffffff;
+      border-bottom-color: #9fc5f1;
+      text-decoration: none;
+    }
+
+    /* Introduction section */
+
+    .intro {
+      padding: 42px 35px;
+      margin: 28px 0;
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      align-items: center;
+      gap: 35px;
+      background: #f1f5fa;
+      border: 1px solid #dce6f1;
+      border-top: 4px solid #315f91;
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin: 0 0 12px;
+      color: #17365d;
+    }
+
+    .subtitle {
+      color: #315f91;
+      font-weight: bold;
+      font-size: 1.08rem;
+      margin: 0 0 18px;
+    }
+
+    .intro p {
+      max-width: 580px;
+    }
+
+    .profile {
+      width: 230px;
+      height: 270px;
+      object-fit: cover;
+      object-position: center top;
+      background: #ffffff;
+      border: 4px solid #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(23, 54, 93, 0.14);
+    }
+
+    /* General sections */
+
+    .section {
+      padding: 32px 0;
+      border-top: 2px solid #d5e2f0;
+      scroll-margin-top: 85px;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      color: #17365d;
+      margin: 0 0 20px;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      background: #315f91;
+      height: 3px;
+      width: 50px;
+      margin-top: 7px;
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      color: #284c73;
+      margin: 0 0 7px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    /* Research and reports */
+
+    .item {
+      padding: 19px 0;
+      border-top: 1px solid #e6edf5;
+    }
+
+    .item:first-of-type {
+      border-top: none;
+    }
+
+    .item p {
+      color: #59636d;
+      margin: 6px 0 10px;
+    }
+
+    .meta {
+      color: #778391;
+      font-size: 0.88rem;
+      margin-top: 8px;
+    }
+
+    /* Project cards */
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      border: 1px solid #d8e3ef;
+      border-top: 3px solid #315f91;
+      padding: 22px;
+      border-radius: 7px;
+      background: #ffffff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 14px rgba(23, 54, 93, 0.10);
+    }
+
+    .project h3 {
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #59636d;
+    }
+
+    .tags {
+      color: #64778b;
+      font-size: 0.88rem;
+    }
+
+    /* Skill tags */
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .skill {
+      display: inline-block;
+      padding: 6px 13px;
+      background: #edf3fa;
+      color: #284c73;
+      border: 1px solid #d5e2f0;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    /* Contact section */
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: 20px;
+      padding: 24px 0;
+      background: #17365d;
+      border-top: 4px solid #315f91;
+      color: #edf4ff;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile layout */
+
+    @media (max-width: 650px) {
+      .nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .intro {
+        padding: 25px;
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .profile {
+        width: 190px;
+        height: 220px;
+        grid-row: 1;
+      }
+
+      .project-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 27px 0;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+    
+.tagline {
+  color: #315f91;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.greeting {
+  margin-bottom: 4px;
+  color: #59636d;
+  font-size: 1.05rem;
+}
+
+.intro .subtitle {
+  margin-top: 15px;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+
+  <header>
+    <div class="container nav">
+      <a class="name" href="#top">Sadhana Gowda</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research & Reports</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+
+    <!-- Introduction -->
+
+    
+<section class="intro">
+  <div>
+    <p class="tagline">Curiosity · Creativity · Computing</p>
+
+    <p class="greeting">Hello, I'm</p>
+
+    <h1>Sadhana SB Gowda</h1>
+
+    <p class="subtitle">Aspiring AI/ML student | Researcher & Developer</p>
+
+    <p>
+      Exploring the intersection of artificial intelligence,
+      real-world problem solving, and technology for meaningful impact.
+    </p>
+
+    <p>
+      <a href="#projects">Explore my projects ↓</a>
+    </p>
+  </div>
+
+  <img
+    class="profile"
+    src="images/profile.jpg"
+    alt="Sadhana SB Gowda"
+  >
+</section>
+
+
+    <!-- About -->
+
+    
+<section class="section" id="about">
+  <h2>About Me</h2>
+
+  <p>
+    I'm Sadhana Gowda, an enthusiastic fresher in Artificial Intelligence
+    and Machine Learning with a passion for solving complex problems
+    through data-driven approaches.
+  </p>
+
+  <p>
+    I aspire to contribute to impactful technology projects, explore
+    innovative AI/ML solutions, and continuously strengthen my technical
+    expertise. My goal is to grow as a technology professional while
+    building practical solutions that address real-world challenges.
+  </p>
+
+  <p>
+    This portfolio showcases my projects, technical interests, and
+    evolving journey in AI/ML and research.
+  </p>
+
+  <div class="skill-list">
+    <span class="skill">Curious Learner</span>
+    <span class="skill">Problem Solving</span>
+    <span class="skill">Data-Driven Thinking</span>
+  </div>
+</section>
+
+
+    <!-- Research and reports -->
+
+    <section class="section" id="research">
+      <h2>Research & Reports</h2>
+
+      <div class="item">
+        <h3>
+          Blue-Collar Job Portal: A Web-Based Employment Management System
+        </h3>
+
+        <p>
+          A project report about a web application for worker registration,
+          job postings, job search, and applications.
+        </p>
+
+        <a href="papers/BlueCollar.pdf" target="_blank" rel="noopener">
+          Read Project Report (PDF) ↗
+        </a>
+      </div>
+
+      <div class="item">
+        <h3>AI-Powered Personalized Tax Planning & Advisory System</h3>
+
+        <p>
+          A mini-project synopsis exploring tax-regime comparison and
+          personalized tax-planning recommendations.
+        </p>
+
+        <a
+          href="papers/Tax_Planning_Synopsis.pptx"
+          target="_blank"
+          rel="noopener"
+        >
+          View Project Synopsis (PPTX) ↗
+        </a>
+
+        <div class="meta">Mini-project in progress</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+
+    <section class="section" id="projects">
+      <h2>My Projects</h2>
+
+      <div class="project-list">
+
+        <article class="project">
+          <h3>Blue-Collar Job Portal</h3>
+
+          <p>
+            A web-based employment management system designed to help
+            workers find opportunities and allow employers to post jobs.
+          </p>
+
+          <p class="tags">
+            Technologies: HTML, CSS, JavaScript, PHP, MySQL, XAMPP
+          </p>
+
+          <a href="papers/BlueCollar.pdf" target="_blank" rel="noopener">
+            View Project Report ↗
+          </a>
+        </article>
+
+        <article class="project">
+          <h3>AI Tax Advisor</h3>
+
+          <p>
+            A team mini-project concept that brings together tax
+            calculation, regime comparison, and personalized recommendations.
+          </p>
+
+          <p class="tags">
+            Focus: AI/ML, tax planning, personalization
+          </p>
+
+          <a
+            href="papers/Tax_Planning_Synopsis.pptx"
+            target="_blank"
+            rel="noopener"
+          >
+            View Project Synopsis ↗
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+
+    <section class="section" id="skills">
+      <h2>Skills & Interests</h2>
+
+      <p><strong>Programming:</strong></p>
+      <div class="skill-list">
+        <span class="skill">Python</span>
+        <span class="skill">C</span>
+        <span class="skill">Java</span>
+      </div>
+
+      <p><strong>Data and databases:</strong></p>
+      <div class="skill-list">
+        <span class="skill">SQL</span>
+        <span class="skill">Excel</span>
+        <span class="skill">Data Analysis</span>
+      </div>
+
+     <p><strong>Tools:</strong></p>
+<div class="skill-list">
+  <span class="skill">Git</span>
+  <span class="skill">Visual Studio Code</span>
+</div>
+
+      <p><strong>Interests:</strong></p>
+      <div class="skill-list">
+        <span class="skill">Artificial Intelligence</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">Problem-Solving</span>
+        <span class="skill">Web Development</span>
+      </div>
+    </section>
+
+    <!-- Contact -->
+
+    <section class="section" id="contact">
+      <h2>Contact Me</h2>
+
+      <p>
+        If you'd like to connect about a project or discuss technology
+        and research, you can reach me here:
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:sadhanasbgowda@gmail.com">
+          sadhanasbgowda@gmail.com
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/sadhana-sb-gowda-86a24a1b1/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn Profile ↗
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Sadhana Gowda
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
